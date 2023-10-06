@@ -16,16 +16,26 @@ def checkEmailField(email: str):
 
         
 def checkIDField(id):
-	if len(id) != 7:
+	try:
+		val = int(id)
+	except ValueError:
+		mbox.showerror("Error","Invalid ID field")
+    
+	if len(str(val)) != 7:
 		
 		mbox.showerror("Error","Invalid ID field")
 	else:
 		return True
 
-def checkContactField(id):
-	if len(id) != 10:
+def checkContactField(contact):
+	try:
+		val = int(contact)
+	except ValueError:
+		mbox.showerror("Error","Invalid Contact field")
+    
+	if len(str(val)) != 10:
 		
-		mbox.showerror("Error","Invalid ID field")
+		mbox.showerror("Error","Invalid Contact field")
 	else:
 		return True
 
